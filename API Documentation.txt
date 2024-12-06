@@ -1,0 +1,802 @@
+
+Endpoint 1:
+
+Request: 
+GET /api/chess/grandmaster
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+  [
+      {
+          "id": 1,
+          "name": "Magnus Carlsen",
+          "rating": 2847,
+          "titles": "World Champion, Rapid Champion",
+          "country": "Norway",
+          "birthdate": "1990-11-30",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 2,
+          "name": "Ian Nepomniachtchi",
+          "rating": 2784,
+          "titles": "Candidates Winner",
+          "country": "Russia",
+          "birthdate": "1990-07-14",
+          "gender": "Male",
+            
+      },
+      {
+          "id": 3,
+          "name": "Ding Liren",
+          "rating": 2811,
+          "titles": "World Champion",
+          "country": "China",
+          "birthdate": "1992-10-24",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 4,
+          "name": "Fabiano Caruana",
+          "rating": 2786,
+          "titles": "Candidates Runner-up",
+          "country": "United States",
+          "birthdate": "1992-07-30",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 5,
+          "name": "Hikaru Nakamura",
+          "rating": 2775,
+          "titles": "Speed Chess Champion",
+          "country": "United States",
+          "birthdate": "1987-12-09",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 6,
+          "name": "Alireza Firouzja",
+          "rating": 2754,
+          "titles": "Youngest 2800-rated",
+          "country": "France",
+          "birthdate": "2003-06-18",
+          "gender": "Male",
+
+      },
+      {
+          "id": 7,
+          "name": "Levon Aronian",
+          "rating": 2752,
+          "titles": "World Cup Winner",
+          "country": "United States",
+          "birthdate": "1982-10-06",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 8,
+          "name": "Anish Giri",
+          "rating": 2744,
+          "titles": "Tata Steel Champion",
+          "country": "Netherlands",
+          "birthdate": "1994-06-28",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 9,
+          "name": "Wesley So",
+          "rating": 2764,
+          "titles": "World Fischer Random Champion",
+          "country": "United States",
+          "birthdate": "1993-10-09",
+          "gender": "Male",
+          
+      },
+      {
+          "id": 10,
+          "name": "Shakhriyar Mamedyarov",
+          "rating": 2736,
+          "titles": "World Team Champion",
+          "country": "Azerbaijan",
+          "birthdate": "1985-04-12",
+          "gender": "Male",
+          
+      }
+  ]
+
+<body>
+  <grandmasters>
+    <grandmaster>
+        <id>1</id>
+        <name>Magnus Carlsen</name>
+        <rating>2847</rating>
+        <titles>World Champion, Rapid Champion</titles>
+        <country>Norway</country>
+        <birthdate>1990-11-30</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>2</id>
+        <name>Ian Nepomniachtchi</name>
+        <rating>2784</rating>
+        <titles>Candidates Winner</titles>
+        <country>Russia</country>
+        <birthdate>1990-07-14</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>3</id>
+        <name>Ding Liren</name>
+        <rating>2811</rating>
+        <titles>World Champion</titles>
+        <country>China</country>
+        <birthdate>1992-10-24</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>4</id>
+        <name>Fabiano Caruana</name>
+        <rating>2786</rating>
+        <titles>Candidates Runner-up</titles>
+        <country>United States</country>
+        <birthdate>1992-07-30</birthdate>
+        <gender>Male</gender>
+    <grandmaster>
+        <id>5</id>
+        <name>Levon Aronian</name>
+        <rating>2785</rating>
+        <titles>Grand Prix Winner</titles>
+        <country>Armenia</country>
+        <birthdate>1982-10-03</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>6</id>
+        <name>Shakhriyar Mamedyarov</name>
+        <rating>2774</rating>
+        <titles>Grand Prix Winner</titles>
+        <country>Azerbaijan</country>
+        <birthdate>1985-04-12</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>7</id>
+        <name>Vladimir Kramnik</name>
+        <rating>2765</rating>
+        <titles>World Champion</titles>
+        <country>Russia</country>
+        <birthdate>1975-06-25</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>8</id>
+        <name>Viswanathan Anand</name>
+        <rating>2750</rating>
+        <titles>Former World Champion</titles>
+        <country>India</country>
+        <birthdate>1969-12-11</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>9</id>
+        <name>Alexander Grischuk</name>
+        <rating>2763</rating>
+        <titles>World Blitz Champion</titles>
+        <country>Russia</country>
+        <birthdate>1983-11-31</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+    <grandmaster>
+        <id>10</id>
+        <name>Maxime Vachier-Lagrave</name>
+        <rating>2765</rating>
+        <titles>Grand Slam Champion</titles>
+        <country>France</country>
+        <birthdate>1990-10-21</birthdate>
+        <gender>Male</gender>
+    </grandmaster>
+</grandmasters>
+</body>
+
+Endpoint 2:
+
+Request: 
+PATCH /api/chess/grandmaster/2  
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+Body:  
+  {  
+      "rating": 2800  
+  }  
+
+Response:
+Status code: 200 OK  
+Body:  
+  {  
+      "warning": "Rating updated to 2800 for grandmaster id: 2 successfully.",  
+      "id": 2,  
+      "name": "Ian Nepomniachtchi",  
+      "rating": 2800,  
+      "titles": "Candidates Winner",  
+      "country": "Russia",  
+      "birthdate": "1990-07-14",
+      "gender": "Male"
+  }  
+
+<PatchRequest>
+  <id>2</id>
+  <rating>2800</rating>
+</PatchRequest>
+
+<body>
+	<grandmaster>
+		<warning>Rating updated to 2800 for grandmaster id: 2 successfully.</warning>
+		<id>2</id>
+		<name>Ian Nepomniachtchi</name>
+		<rating>2800</rating>
+		<titles>Candidates Winner</titles>
+		<country>Russia</country>
+		<birthdate>1990-07-14</birthdate>
+		<gender>Male</gender>
+	</grandmaster>
+</body>
+
+
+
+Endpoint 3:
+
+Response:
+POST /api/chess/grandmaster
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+Body:  
+  {  
+      "name": "Vishy Anand",  
+      "rating": 2750,  
+      "titles": "Former World Champion",  
+      "country": "India",  
+      "birthdate": "1969-12-11",  
+      "gender": "Male"
+  }  
+
+Response:
+Status code: 201 Created 
+Body:  
+  {  
+      "warning": "Grandmaster added successfully!",  
+      "id": 11,  
+      "name": "Vishy Anand",  
+      "rating": 2750,  
+      "titles": "Former World Champion",  
+      "country": "India",  
+      "birthdate": "1969-12-11",  
+      "gender": "Male",
+  }  
+<body>
+	<grandmaster>
+		<name>Vishy Anand</name>
+		<rating>2750</rating>
+		<titles>Former World Champion</titles>
+		<country>India</country>
+		<birthdate>1969-12-11</birthdate>
+		<gender>Male</gender>
+	</grandmaster>
+
+	<grandmaster>
+		<warning>Grandmaster added successfully!</warning>
+		<id>11</id>
+		<name>Vishy Anand</name>
+		<rating>2750</rating>
+		<titles>Former World Champion</titles>
+		<country>India</country>
+		<birthdate>1969-12-11</birthdate>
+		<gender>Male</gender>
+	</grandmaster>
+</body>
+
+
+Endpoint 4:
+
+Request:
+GET /api/chess/grandmaster/country/united-states
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+  [
+      {
+          "id": 4,
+          "name": "Fabiano Caruana",
+          "rating": 2786,
+          "titles": "Candidates Runner-up",
+          "country": "United States",
+          "birthdate": "1992-07-30",
+          "gender": "Male",
+      },
+      {
+          "id": 5,
+          "name": "Hikaru Nakamura",
+          "rating": 2775,
+          "titles": "Speed Chess Champion",
+          "country": "United States",
+          "birthdate": "1987-12-09",
+          "gender": "Male",
+      },
+      {
+          "id": 7,
+          "name": "Levon Aronian",
+          "rating": 2752,
+          "titles": "World Cup Winner",
+          "country": "United States",
+          "birthdate": "1982-10-06",
+          "gender": "Male",
+      },
+      {
+          "id": 9,
+          "name": "Wesley So",
+          "rating": 2764,
+          "titles": "World Fischer Random Champion",
+          "country": "United States",
+          "birthdate": "1993-10-09",
+          "gender": "Male",
+      }
+  ]
+
+<body>
+	<grandmasters>
+		<grandmaster>
+			<id>4</id>
+			<name>Fabiano Caruana</name>
+			<rating>2786</rating>
+			<titles>Candidates Runner-up</titles>
+			<country>United States</country>
+			<birthdate>1992-07-30</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>5</id>
+			<name>Hikaru Nakamura</name>
+			<rating>2775</rating>
+			<titles>Speed Chess Champion</titles>
+			<country>United States</country>
+			<birthdate>1987-12-09</birthdate>
+			<gender>Male</gender>
+	  	</grandmaster>
+ 	 	<grandmaster>
+			<id>7</id>
+			<name>Levon Aronian</name>
+			<rating>2752</rating>
+			<titles>World Cup Winner</titles>
+			<country>United States</country>
+			<birthdate>1982-10-06</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>9</id>
+			<name>Wesley So</name>
+			<rating>2764</rating>
+			<titles>World Fischer Random Champion</titles>
+			<country>United States</country>
+			<birthdate>1993-10-09</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+	</grandmasters>
+</body>
+
+
+Endpoint 5:
+
+Request:
+GET /api/chess/grandmaster/title/world-champion
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+  [
+      {
+          "id": 1,
+          "name": "Magnus Carlsen",
+          "rating": 2847,
+          "titles": "World Champion", "Rapid Champion",
+          "country": "Norway",
+          "birthdate": "1990-11-30",
+          "gender": "Male",
+      },
+      {
+          "id": 3,
+          "name": "Ding Liren",
+          "rating": 2811,
+          "titles": "World Champion",
+          "country": "China",
+          "birthdate": "1992-10-24",
+          "gender": "Male",
+      }
+  ]
+
+<body>
+	<grandmasters>
+		<grandmaster>
+			<id>1</id>
+        		<name>Magnus Carlsen</name>
+        		<rating>2847</rating>
+        		<titles>World Champion, Rapid Champion</titles>
+        		<country>Norway</country>
+        		<birthdate>1990-11-30</birthdate>
+        		<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+        		<id>3</id>
+        		<name>Ding Liren</name>
+        		<rating>2811</rating>
+        		<titles>World Champion</titles>
+        		<country>China</country>
+        		<birthdate>1992-10-24</birthdate>
+        		<gender>Male</gender>
+		</grandmaster>
+	</grandmasters>
+</body>
+
+
+Endpoint 6:
+
+Request:
+GET /api/chess/grandmaster/gender/male
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+  [
+      {
+          "id": 1,
+          "name": "Magnus Carlsen",
+          "rating": 2847,
+          "titles": "World Champion", "Rapid Champion",
+          "country": "Norway",
+          "birthdate": "1990-11-30",
+          "gender": "Male",
+      },
+      {
+          "id": 2,
+          "name": "Ian Nepomniachtchi",
+          "rating": 2784,
+          "titles": "Candidates Winner",
+          "country": "Russia",
+          "birthdate": "1990-07-14",
+          "gender": "Male",
+      },
+      {
+          "id": 3,
+          "name": "Ding Liren",
+          "rating": 2811,
+          "titles": "World Champion",
+          "country": "China",
+          "birthdate": "1992-10-24",
+          "gender": "Male",
+      },
+      {
+          "id": 4,
+          "name": "Fabiano Caruana",
+          "rating": 2786,
+          "titles": "Candidates Runner-up",
+          "country": "United States",
+          "birthdate": "1992-07-30",
+          "gender": "Male",
+      },
+      {
+          "id": 5,
+          "name": "Hikaru Nakamura",
+          "rating": 2775,
+          "titles": "Speed Chess Champion",
+          "country": "United States",
+          "birthdate": "1987-12-09",
+          "gender": "Male",
+      },
+      {
+          "id": 6,
+          "name": "Alireza Firouzja",
+          "rating": 2754,
+          "titles": "Youngest 2800-rated",
+          "country": "France",
+          "birthdate": "2003-06-18",
+          "gender": "Male",
+      },
+      {
+          "id": 7,
+          "name": "Levon Aronian",
+          "rating": 2752,
+          "titles": "World Cup Winner",
+          "country": "United States",
+          "birthdate": "1982-10-06",
+          "gender": "Male",
+      },
+      {
+          "id": 8,
+          "name": "Anish Giri",
+          "rating": 2744,
+          "titles": "Tata Steel Champion",
+          "country": "Netherlands",
+          "birthdate": "1994-06-28",
+          "gender": "Male",
+      },
+      {
+          "id": 9,
+          "name": "Wesley So",
+          "rating": 2764,
+          "titles": "World Fischer Random Champion",
+          "country": "United States",
+          "birthdate": "1993-10-09",
+          "gender": "Male",
+      },
+      {
+          "id": 10,
+          "name": "Shakhriyar Mamedyarov",
+          "rating": 2736,
+          "titles": "World Team Champion",
+          "country": "Azerbaijan",
+          "birthdate": "1985-04-12",
+          "gender": "Male",
+      }
+  ]
+<body>
+	<grandmasters>
+		<grandmaster>
+			<id>1</id>
+			<name>Magnus Carlsen</name>
+			<rating>2847</rating>
+			<titles>World Champion, Rapid Champion</titles>
+			<country>Norway</country>
+			<birthdate>1990-11-30</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>2</id>
+			<name>Ian Nepomniachtchi</name>
+			<rating>2784</rating>
+			<titles>Candidates Winner</titles>
+			<country>Russia</country>
+			<birthdate>1990-07-14</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>3</id>
+			<name>Ding Liren</name>
+			<rating>2811</rating>
+			<titles>World Champion</titles>
+			<country>China</country>
+			<birthdate>1992-10-24</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>4</id>
+			<name>Fabiano Caruana</name>
+			<rating>2786</rating>
+			<titles>Candidates Runner-up</titles>
+			<country>United States</country>
+			<birthdate>1992-07-30</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>5</id>
+			<name>Hikaru Nakamura</name>
+			<rating>2775</rating>
+			<titles>Speed Chess Champion</titles>
+			<country>United States</country>
+			<birthdate>1987-12-09</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>6</id>
+			<name>Alireza Firouzja</name>
+			<rating>2754</rating>
+			<titles>Youngest 2800-rated</titles>
+			<country>France</country>
+			<birthdate>2003-06-18</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>7</id>
+			<name>Levon Aronian</name>
+			<rating>2752</rating>
+			<titles>World Cup Winner</titles>
+			<country>United States</country>
+			<birthdate>1982-10-06</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>8</id>
+			<name>Anish Giri</name>
+			<rating>2744</rating>
+			<titles>Tata Steel Champion</titles>
+			<country>Netherlands</country>
+			<birthdate>1994-06-28</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>9</id>
+			<name>Wesley So</name>
+			<rating>2764</rating>
+			<titles>World Fischer Random Champion</titles>
+			<country>United States</country>
+			<birthdate>1993-10-09</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+    	<grandmaster>
+			<id>10</id>
+			<name>Shakhriyar Mamedyarov</name>
+			<rating>2736</rating>
+			<titles>World Team Champion</titles>
+			<country>Azerbaijan</country>
+			<birthdate>1985-04-12</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+	</grandmasters>
+</body>
+
+
+Endpoint 7:
+
+Request:
+DELETE /api/chess/grandmaster/10  
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 204 No Content  
+Body:  
+    {  
+        "warning": "Grandmaster ID 10 has been deleted from the database."  
+    }
+
+	<response>
+		<warning>Grandmaster ID 10 has been deleted from the database.</warning>
+	</response>
+  
+
+Endpoint 8:
+
+Request:
+GET /api/chess/grandmaster/birthyear/1990
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+    [
+      {
+          "id": 1,
+          "name": "Magnus Carlsen",
+          "rating": 2847,
+          "titles": "World Champion", "Rapid Champion",
+          "country": "Norway",
+          "birthdate": "1990-11-30",
+          "gender": "Male",
+      },
+      {
+          "id": 2,
+          "name": "Ian Nepomniachtchi",
+          "rating": 2784,
+          "titles": "Candidates Winner",
+          "country": "Russia",
+          "birthdate": "1990-07-14",
+          "gender": "Male",
+      }
+  ]
+<body>
+	<grandmasters>
+		<grandmaster>
+			<id>1</id>
+			<name>Magnus Carlsen</name>
+			<rating>2847</rating>
+			<titles>World Champion, Rapid Champion</titles>
+			<country>Norway</country>
+			<birthdate>1990-11-30</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+		<grandmaster>
+			<id>2</id>
+			<name>Ian Nepomniachtchi</name>
+			<rating>2784</rating>
+			<titles>Candidates Winner</titles>
+			<country>Russia</country>
+			<birthdate>1990-07-14</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+	</grandmasters>
+</body>
+
+Endpoint 9:
+
+Request:
+GET /api/chess/grandmaster/rating/2847  
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+  [
+      {
+          "id": 1,
+          "name": "Magnus Carlsen",
+          "rating": 2847,
+          "titles": "World Champion", "Rapid Champion",
+          "country": "Norway",
+          "birthdate": "1990-11-30",
+          "gender": "Male",
+      }
+  ]
+
+<body>
+	<grandmasters>
+		<grandmaster>
+			<id>1</id>
+			<name>Magnus Carlsen</name>
+			<rating>2847</rating>
+			<titles>World Champion, Rapid Champion</titles>
+			<country>Norway</country>
+			<birthdate>1990-11-30</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+	</grandmasters>
+</body>
+
+Endpoint 10:
+
+Request:
+GET /api/chess/grandmaster/rating/2786  
+Headers:  
+    Accept: application/json  
+    Accept: application/xml  
+
+Response:
+Status code: 200 OK  
+Body:  
+  [
+      {
+          "id": 4,
+          "name": "Fabiano Caruana",
+          "rating": 2786,
+          "titles": "Candidates Runner-up",
+          "country": "United States",
+          "birthdate": "1992-07-30",
+          "gender": "Male",
+      }
+  ]
+
+<body>
+	<grandmasters>
+		<grandmaster>
+			<id>4</id>
+			<name>Fabiano Caruana</name>
+			<rating>2786</rating>
+			<titles>Candidates Runner-up</titles>
+			<country>United States</country>
+			<birthdate>1992-07-30</birthdate>
+			<gender>Male</gender>
+		</grandmaster>
+	</grandmasters>
+</body>	

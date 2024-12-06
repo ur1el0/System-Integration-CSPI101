@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Random TV Shows</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAACUCAMAAADBJsndAAAAYFBMVEX///
+    8AAAD39/dGRkbu7u5ZWVn09PRvb28NDQ3Q0NC4uLiSkpKVlZUYGBjCwsLk5ORlZWUoKCg9PT2rq6seHh5TU1PKysozMzNeXl55eXlqamqGho
+    be3t7W1tagoKCysrJJ3UM+AAAECklEQVR4nO2c2ZajIBBAcTfuRo0aY/L/fzmCwkzO2G4UiDPcJ0/a5bZIKcWCkEajNKb6DJZ2ZqlPZiPHuAIOOttgI5
+    fyLB2VKZlnldrqklbM03HPjo0LuI72hORvT1c15j0DWTFmM8Gc56s+V2qG+jXjefPPlZrBv13ds249NWjrRU9PctD5GU97gqI9YdGesGhPWLQnLNoTFu0
+    Ji/aERXvCIsTTDh6QjhgRnm7ux88UVFOIZ4dPYoSgpiI8PeJpWMU1PA3j3l/D0zBaKFPBnkYemUp7lg7N9+WJ0p6P1KOZtAwgmoryjIe7+Kgm0bizVfZE
+    qKCFH785c/5iPZEdlpOplXBVKMGew3mySdTPeF5Qwj2Hx/ROg1R33FSCJzLZY5p/jj6mMjwRSlt6S52DMUqO52DqsGj6UtkToYBG0zI6EE3leSI7ooVvB
+    Sp7DqYtLfzdX3xSPRFKGhpNu32PqWRP5LLu3fqtsudAmNNouuNVeoIn6lk0DTeH/TM8kclepZuj/imeyC0mz80B6hTPDw351uYPkxM8UxqbjGb7i0m6Z9
+    oxyz0NPNmehUWDUrHrE0+uZ3/4k1mmZ88SEM/daRJ5nu6bvofqA006aZ4f1vY41ESW5PmgsShuj7XlpHj+/u5sjqZwJHi6EXswj2duhXuaCY1FZcSRuxH
+    t2We0yD2ulK1Yz7RjDaIbj6VYT/dDk2B37i4FgZ4Jm9vAkVcS7VkWtHHhOxAdSaL7EYzqA2Ap3vPNnfGW4Bm3QJZiPTOQHhlxnlMNCiCnC4jwfAxH1iGgJ
+    BI0TiDodma51vmvx10IQHvCoj1h0Z6waE9YtCcs2hMW7QmL9oTl3/CskkANkmrRUy0u7dnH50rNUPYznubzXKkZnuaMJ0KfMBJPSHoZ3sNWh3tF7viapEe
+    5wn8lYx2f055jgvKsdSRI0owI4J7kJ96y8U8k70OGPXwnUE/yHB8vYofvbIaLNsU/df+OZwMz5H0be8vdbJhnHR6nmP7H19YDSD2KwpDWI7w11qNhi9SjL
+    Po6oGaeXJRE9MZ9nmUA1l8iyW7RwReV6/usQHqum/X9eChRkq/vtYQ/fgpm63tygKeM9JwfYCbzLKOvv0S4qCy+s0/ATWvCnvl3F/ENl1QGdgUYtCcsynj
+    2Qbi0bg528puvnxrcQMiXDgoBK8jIo+UMXz8FnBZ0Im0rru3kt2CWabV+OQ62j7FdwVq/Fp8ojObYu+47RQq87FtaTHNqQIo+Iae6Aw4B+INpvDrAyU1yOw
+    EnDn8zDrj1+BsUJE0Sg0/DZzxwesPnHDyGphaLg4QtmzkuPMs/I52M/bg3wlYhbe4wNUl0UIIKTXJWXay5Pdv1iwDAX+52K2EdZ5BhZHLWxdZoLswvTAV8
+    /qx5t20AAAAASUVORK5CYII=">
+    
+    <style>
+      h1 {
+        font-size: 40px;
+        color: rgb(240, 173, 173);
+      }
+
+      body {
+        font-family: serif;
+        margin: 30px;
+        background-color: rgb(5, 19, 19);
+        text-align: center;
+      }
+
+      img {
+        width: 250px;
+        height: auto;
+        text-align: center;
+      }
+
+      input[type="button"] {
+        padding: 7px;
+        background-color: rgb(208, 220, 224);
+        border: 4px solid black;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      #container {
+        margin-top: 20px;
+      }
+    
+      p1 {
+        font-size: 22px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        max-width: 600px; 
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+
+    <script>
+
+         let currentShow = {};
+
+          // Function to get a random show from TVMaze API
+          async function print() {
+            try {
+              const response = await fetch("https://api.tvmaze.com/shows");
+              const shows = await response.json();
+
+              const randomShow = shows[Math.floor(Math.random() * shows.length)];
+
+              currentShow = {
+                title: randomShow.name,
+                summary: randomShow.summary || "No summary available.",
+                image: randomShow.image ? randomShow.image.medium : "",
+                status: randomShow.status,
+                end: randomShow.ended || "Still Ongoing",
+                premiere: randomShow.premiered,
+                rating: randomShow.rating ? randomShow.rating.average : ""
+              };
+
+              document.getElementById("container").innerHTML = `
+                <h1>${currentShow.title}</h1><br/>
+                ${currentShow.image ? `<img src="${currentShow.image}" alt="${currentShow.title}">` : ""}<br/>
+                <p1>${currentShow.summary}</p1><br/>
+                <p style="font-size: 18px; color: rgb(255, 255, 255); text-align: center;">
+                  Premiere Date: ${currentShow.premiere}</p><br/>
+                <p style="font-size: 18px; color: rgb(255, 255, 255); text-align: center;">
+                  Show Status: ${currentShow.status}</p><br/>
+                <p style="font-size: 18px; color: rgb(255, 255, 255); text-align: center;">
+                  End Date: ${currentShow.end}</p><br/>
+                <p style="font-size: 18px; color: rgb(255, 255, 255); text-align: center;">
+                  Show Rating: ${currentShow.rating}</p><br/>
+              `;
+            } catch (error) {
+              document.getElementById("container").innerHTML = "An error occurred while fetching data.";
+            }
+          }
+
+          // Function to share the show to Microsoft Teams
+          // Function to share the show to Microsoft Teams through the backend server
+          async function shareToTeams() {
+            const payload = {
+              type: "message",
+              attachments: [
+                {
+                  contentType: "application/vnd.microsoft.card.adaptive",
+                  content: {
+                    type: "AdaptiveCard",
+                    version: "1.2",
+                    body: [
+                      {
+                        type: "TextBlock",
+                        text: `Show Update: **${currentShow.title}**`,
+                        size: "Large",
+                        weight: "Bolder"
+                      },
+                      currentShow.image
+                        ? {
+                            type: "Image",
+                            url: currentShow.image,
+                            size: "Large",  // Change size to Large for better visibility
+                            horizontalAlignment: "Center"
+                          }
+                        : {},
+                      {
+                        type: "FactSet",
+                        facts: [
+                          {
+                            title: "Premiere Date:",
+                            value: currentShow.premiere || "N/A"
+                          },
+                          {
+                            title: "Status:",
+                            value: currentShow.status || "N/A"
+                          },
+                          {
+                            title: "End Date:",
+                            value: currentShow.end || "N/A"
+                          },
+                          {
+                            title: "Rating:",
+                            value: currentShow.rating || "N/A"
+                          }
+                        ]
+                      },
+                      {
+                        type: "TextBlock",
+                        text: currentShow.summary
+                          ? currentShow.summary.replace(/<[^>]+>/g, "") // Remove HTML tags
+                          : "No summary available.",
+                        wrap: true,
+                        spacing: "Medium"
+                      }
+                    ],
+                    actions: [
+                      {
+                        type: "Action.OpenUrl",
+                        title: "View on TVMaze",
+                        url: `https://www.tvmaze.com/shows/${currentShow.id}`
+                      }
+                    ]
+                  }
+                }
+              ]
+            };
+
+            try {
+              const response = await fetch('http://localhost:4000/send-to-teams', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+
+              if (response.ok) {
+                alert("Shared successfully to Microsoft Teams!");
+              } else {
+                alert("Failed to share to Microsoft Teams.");
+              }
+            } catch (error) {
+              alert("An error occurred while sharing to Microsoft Teams.");
+              console.error("Error:", error);
+            }
+          }
+
+
+    </script>
+
+</head>
+
+<body>
+  <input type="button" value="Get Random Show" onclick="print()" />
+  <input type="button" value="Share to Teams" onclick="shareToTeams()" />
+  <div id="container"></div>
+</body>
+</html>
+
+

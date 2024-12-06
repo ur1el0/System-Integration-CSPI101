@@ -1,0 +1,77 @@
+<html>
+<head>
+    <script>
+        async function postWebhook() {
+            // Get the severity threshold input value
+            const severityThreshold = document.getElementById("severity-threshold").value;
+
+        
+                // Fetch flood data from the API
+                const response = await fetch("https://environment.data.gov.uk/flood-monitoring/id/floods");
+                const json = await response.json();
+
+                // Filter and format flood warnings based on severity threshold
+                let string = "";
+                json.items.forEach(element => {
+                    if (element.severityLevel <= severityThreshold) {
+                        string += `Description: ${element.description}\nArea: ${element.eaAreaName}\nSeverity Level: ${element.severityLevel}\n\n`;
+                    }
+                });
+
+                // Prepare the Adaptive Card payload
+                var raw = JSON.stringify({
+                    "type": "message",
+                    "attachments": [
+                        {
+                            "contentType": "application/vnd.microsoft.card.adaptive",
+                            "contentUrl": null,
+                            "content": {
+                                "type": "AdaptiveCard",
+                                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                                "version": "1.6",
+                                "body": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Flood Warnings (Roosc Zaño)",
+                                        "wrap": true,
+                                        "style": "heading"
+                                    },
+                                    {
+                                        "type": "Container",
+                                        "spacing": "Small",
+                                        "items": [
+                                            {
+                                                "type": "TextBlock",
+                                                "text": string || "No warnings found for the given threshold.",
+                                                "wrap": true
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                });
+
+                // Post the Adaptive Card to Microsoft Teams
+                const webhookUrl = "https://mseufeduph.webhook.office.com/webhookb2/8ef714f6-81de-4b42-ad2e-c262d5ce04d1@ddedb3cc-596d-482b-8e8c-6cc149a7a7b7/IncomingWebhook/6df630f3353c4b2a8ec37e4fa6d7ecd1/e0510d66-17c3-43f4-a3ef-0cf6a6fba189/V2Epa08tX2A0vihBCTaa6xE1g4wlAgOQCtYMwCKp2H6FQ1";
+
+                await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: raw,
+                    mode: "no-cors"
+                });
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Flood Warning Alert System</h1>
+    <label for="severity-threshold">Enter Severity Level                                    :</label>
+    <input type="number" id="severity-threshold" placeholder="Enter severity level">
+    <button onclick="postWebhook()">Post</button>
+</body>
+</html>
